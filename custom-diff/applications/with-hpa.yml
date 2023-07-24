@@ -16,13 +16,13 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: example01
+  
+  # Sync policy
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true  
   ignoreDifferences:
   - group: apps
     kind: Deployment
     jsonPointers:
     - /spec/replicas
-  # Sync policy
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true  
-   
